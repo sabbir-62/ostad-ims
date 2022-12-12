@@ -1,3 +1,4 @@
+// Requirements
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
@@ -33,5 +34,5 @@ readdirSync('./routes').map(r => app.use('/api/v1', require(`./routes/${r}`)))
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-    console.log(`App is running on port ${port}`.yellow.bold); 
+    console.log(`App is successfully running on port ${port}`.yellow.bold); 
 })
