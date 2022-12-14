@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
 app.use(cors());
+colors.enable();
 
 
 //DB Connection
@@ -27,7 +28,7 @@ mongoose
 
 
 // Routes Middleware
-readdirSync('./routes').map(r => app.use('/api/v1', require(`./routes/${r}`)))
+readdirSync('./routes').map((r) => app.use('/api/v1', require(`./routes/${r}`)))
 
 
 // Server
