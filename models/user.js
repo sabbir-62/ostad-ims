@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
 
     email: {
         type: String,
-        validate: [validator.esEmail, "Provide a valid Email"],
+        validate: [validator.isEmail, "Provide a valid Email"],
         trim: true,
         lowercase: true,
         unique: true,
@@ -76,7 +76,7 @@ const userSchema = mongoose.Schema({
 
     imageUrl: {
         type: String,
-        validate: [validator.isURl, "Please provide a valid url"]
+        validate: [validator.isURL, "Please provide a valid url"]
     },
     
     status: {
